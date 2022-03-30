@@ -1,7 +1,7 @@
 
 export default class keyCall {
 
-  static async getAccess() {
+  static async getAccess(children) {
     const key = process.env.API_KEY;
     const secret = process.env.SECRET;
 		
@@ -15,7 +15,7 @@ export default class keyCall {
 
       // Return the response as JSON
       return resp.json();
-
+ 
     }).then(function (data) { 
 
       // Log the API data
@@ -23,7 +23,7 @@ export default class keyCall {
 
       // Return a second API call
       // This one uses the token we received for authentication
-      return fetch('https://api.petfinder.com/v2/animals?type=dog&page=2', {
+      return fetch(`https://api.petfinder.com/v2/animals?type=dog&location=portland, oregon&page=2&limit=5&special_needs=true&good_with_children=${children}`, {
         headers: {
           'Authorization': data.token_type + ' ' + data.access_token,
           'Content-Type': 'application/x-www-form-urlencoded'

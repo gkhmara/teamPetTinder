@@ -5,14 +5,6 @@ import './css/styles.css';
 import keyCall from './js/business.js';
 console.log($);
 
-
-
-keyCall.getAccess().then(function(data) {
-  console.log(data);
-
-
-});
-
 // const animalArray = data && data.animals && data.animals.map((animal) => {
 //   console.log("whole animal", animal)
 //   return animal.name;
@@ -20,12 +12,22 @@ keyCall.getAccess().then(function(data) {
 
 // console.log(animalArray);
 
+function getElements(data, children) {
+  let output = children;
+  console.log(output);
+  console.log(data);
+  $('.showResults').text(data.animals[0].name);
+}
+
 $(document).ready(function() {
   $('#enterSearch').click(function() {
     event.preventDefault();
     const children = $('input:radio[name=children]:checked').val();
-    console.log(children);
-    $('.showResults').text(children);
+    keyCall.getAccess(children).then(function(data) {
+      getElements(data, children); 
+    });
+    //    console.log(children);
+    //    $('.showResults').text(children);
 
   });
 });
