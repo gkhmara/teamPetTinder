@@ -8,21 +8,45 @@
     <h1>TEAM PET TINDER</h1>
     <h2>Please fill out our survey:</h2>
     
-    <form>
+    
       <div class="form-group">
-
+        <div class="radio">
+          <label>
+            Are you looking for a Dog or Cat?:
+            <input type="radio" name="species" value="dog">Dog</input>
+            <input type="radio" name="species" value="cat">Cat</input>
+          </label>
+        </div>
           <div class="radio">
             <label>
-              Good with children:
-              <input type="radio" name="children" value="true">
+              Do you live in a home with Children:
+              <input type="radio" name="children" value="true">Yes</input>
+              <input type="radio" name="children" value="false">No</input>
             </label>
           </div>
           <div class="radio">
             <label>
-              Bad with children:
-              <input type="radio" name="children" value="false">
+              Do you live in a home with other Dogs:
+              <input type="radio" name="dogs" value="true">Yes</input>
+              <input type="radio" name="dogs" value="false">No</input>
             </label>
           </div>
+          <div class="radio">
+            <label>
+              Do you live in a home with Cats:
+               <input type="radio" name="cats" value="true">Yes</input>
+               <input type="radio" name="cats" value="false">No</input>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              Interested in Animals with Special Needs or Disabilities:
+              <input type="radio" name="special" value="true">Yes</input>
+              <input type="radio" name="special" value="false">No</input>
+            </label>
+          </div>
+    </div>
+        
 
 
           <!-- <label for="userInput" value="good_with_dogs">Good with dogs:</label>
@@ -38,14 +62,14 @@
           <input id="userInput" type="radio" value="no-trained">No</iput>  -->
           <br>
 
-        </div>
 
       <button class="btn btn-success" type="submit" id="enterSearch">Submit</button>
       <div class="showImage"></div>
-      <div class="showResults"></div>
+      <div class="showDogResults"></div>
+      <div class="showCatResults"></div>
       <div class="showErrors"></div>
-    </div>
-    </form>
+      </div>
+    
   
   </div>
 </body>

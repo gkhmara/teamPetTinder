@@ -22,19 +22,34 @@ function clearFields() {
   $('.showResults').text("");
 }
 
+// function getElements(data) {
+//   for (let i = 0; i < data.animals.length; i++) {
+//     $('.showResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
+//     console.log(data, data.animals[i].photos.length);
+//   }
+// }
+
 function getElements(data) {
   for (let i = 0; i < data.animals.length; i++) {
-    $('.showResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
-    console.log(data);
-  }
+    if (data.animals[i].photos.length < 0) {
+      $('.showDogResults').append(data.animals[i].name + ": " + data.animals[i].description + `<br>`);
+      console.log(data, data.animals[i].photos.length);
+    } else if (data.animals[i].photos.length > 0)
+      $('.showDogResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
+    console.log(data, data.animals[i].photos.length);
+  }  
 }
 
 $(document).ready(function() {
   $('#enterSearch').click(function() {
     event.preventDefault();
+    const species = $('input:radio[name=species]:checked').val();
     const children = $('input:radio[name=children]:checked').val();
+    const dogs = $('input:radio[name=dogs]:checked').val();
+    const cats = $('input:radio[name=cats]:checked').val();
+    const special = $('input:radio[name=special]:checked').val();
     clearFields();
-    keyCall.getAccess(children).then(function(data) {
+    keyCall.getAccess(species, children, dogs, cats, special).then(function(data) {
       getElements(data); 
     });
     //    console.log(children);
