@@ -19,7 +19,7 @@ console.log($);
 // }
 
 function clearFields() {
-  $('.showResults').text("");
+  $('.showDogResults').text("");
 }
 
 // function getElements(data) {
