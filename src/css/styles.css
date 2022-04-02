@@ -1,4 +1,38 @@
 body {
   background-color: lightblue;
+  border-radius: 50px;
+  text-align: center;
+  font-family: "Sofia", sans-serif;
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 50px;
+  color: #4b3636;
 }
 
+.radio {
+  border-radius: 50px;
+  text-align: center;
+  background-color: rgb(163, 150, 235);
+  font-family: "Sofia", sans-serif;
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 50px;
+  color: #4b3636;
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-showResults {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-showResults > div {
+  float: left;
+  width: 100%;
+  position: relative;
+}
