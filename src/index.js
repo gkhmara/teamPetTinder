@@ -32,10 +32,10 @@ function clearFields() {
 function getElements(data) {
   for (let i = 0; i < data.animals.length; i++) {
     if (data.animals[i].photos.length < 0) {
-      $('.showDogResults').append(data.animals[i].name + ": " + data.animals[i].description + `<br>`);
+      $('.showResults').append(data.animals[i].name + ": " + data.animals[i].description + `<br>`);
       console.log(data, data.animals[i].photos.length);
     } else if (data.animals[i].photos.length > 0)
-      $('.showDogResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
+      $('.showResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
     console.log(data, data.animals[i].photos.length);
   }  
 }
