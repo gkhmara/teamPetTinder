@@ -22,17 +22,3 @@ body {
   color: #4b3636;
 }
 
-.swipe {
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-.swipe-showResults {
-  overflow: hidden;
-  position: relative;
-}
-.swipe-showResults > div {
-  float: left;
-  width: 100%;
-  position: relative;
-}
