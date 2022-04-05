@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: rgb(219, 112, 24);
   border-radius: 50px;
   text-align: center;
   font-family: 'Nosifer', cursive;
@@ -7,28 +7,38 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
   margin: 50px;
-  color: #4b3636;
+  color: #000000;
 }
 
-h1{
+h1 {
+  border: 5px black;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 70%;
+  box-sizing: border-box;
+  color: red;
   font-family: 'Eater', cursive;;
   font-size: 70px;
 }
 
-h2{
+h2 {
   font-family: 'Eater', cursive;
 }
 
 .radio {
   border-radius: 50px;
   text-align: center;
-  background-color: rgb(163, 150, 235);
+  background-color: rgb(240, 230, 96);
   font-family: 'Nosifer', cursive;
   font-size: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
   margin: 50px;
-  color: #755e5e;
+  color: #d41313;
 }
 
 .showResults {
