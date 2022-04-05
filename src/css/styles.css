@@ -2,7 +2,7 @@ body {
   background-color: lightblue;
   border-radius: 50px;
   text-align: center;
-  font-family: "Sofia", sans-serif;
+  font-family: 'Nosifer', cursive;
   font-size: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -10,15 +10,28 @@ body {
   color: #4b3636;
 }
 
+h1{
+  font-family: 'Eater', cursive;;
+  font-size: 70px;
+}
+
+h2{
+  font-family: 'Eater', cursive;
+}
+
 .radio {
   border-radius: 50px;
   text-align: center;
   background-color: rgb(163, 150, 235);
-  font-family: "Sofia", sans-serif;
+  font-family: 'Nosifer', cursive;
   font-size: 15px;
   padding-top: 30px;
   padding-bottom: 30px;
   margin: 50px;
-  color: #4b3636;
+  color: #755e5e;
+}
+
+.showResults {
+  font-family: 'Eater', cursive;
 }
 
