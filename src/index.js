@@ -28,7 +28,7 @@ function getElements(data) {
       // console.log(data, data.animals[i].photos.length);
     } else if (data.animals[i].photos.length > 0)
       $('.showResults').append(`<a href="${data.animals[i].url}"><img src="${data.animals[i].primary_photo_cropped.small}"></a>` + `<ul>` + "<b>Name</b>: " + data.animals[i].name + `<br>` + "<b>Breed</b>: " + data.animals[i].breeds.primary + `<br>` + "<b>Age</b>: " + data.animals[i].age + `<br>` + "<b>Gender</b>: " + data.animals[i].gender + `<br>` + "<b>Location</b>: " + data.animals[i].contact.address.city + ", " + data.animals[i].contact.address.state + `<br>` + "<b>Click Image for Adoption Details</b>" + `<br>`);
-    console.log("LOCATION = " + data.animals[i].contact.address.city + data.animals[i].contact.address.state);
+    // console.log("LOCATION = " + data.animals[i].contact.address.city + data.animals[i].contact.address.state);
   }  
 }
 
@@ -40,17 +40,16 @@ $(document).ready(function() {
     const dogs = $('input:radio[name=dogs]:checked').val();
     const cats = $('input:radio[name=cats]:checked').val();
     const special = $('input:radio[name=special]:checked').val();
-    const zipCode = $('#location').val();
     // const city = $("#location").val().toLowerCase();
     // const state = $("#state").val().toLowerCase();
     // const stateInfo = document.getElementById("location");
     // const state = stateInfo.options[stateInfo.selectedIndex].value;
-    console.log("location =" + typeof(zipCode));
+    
 
     // console.log("city ="  + city);
     // console.log("state ="  + state);
     clearFields();
-    keyCall.getAccess(species, children, dogs, cats, special, zipCode).then(function(data) {
+    keyCall.getAccess(species, children, dogs, cats, special).then(function(data) {
       getElements(data); 
     });
     //    console.log(children);
