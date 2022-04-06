@@ -8,25 +8,15 @@ console.log($);
 
 function clearFields() {
   $('.showResults').text("");
+  $('.showErrors').text("");
 }
 
-// function getElements(data) {
-//   for (let i = 0; i < data.animals.length; i++) {
-//     if (data.animals[i].photos.length < 0) {
-//       $('.showResults').append(data.animals[i].name + ": " + data.animals[i].description + `<br>`);
-//       console.log(data, data.animals[i].photos.length);
-//     } else if (data.animals[i].photos.length > 0)
-//       $('.showResults').append(`<img src="${data.animals[i].primary_photo_cropped.small}">` + data.animals[i].name + ": " + data.animals[i].description + `<br>`);
-//     console.log(data, data.animals[i].photos.length);
-//   }  
-// }
 
 function getElements(data) {
   for (let i = 0; i < data.animals.length; i++) {
     if (data.animals[i].photos.length < 0) {
       $('.showResults').append(data.animals[i].name + ": " + data.animals[i].breeds.primary + `<br>` + data.animals[i].age + `<br>`);
-      // console.log(data, data.animals[i].photos.length);
-    } else if (data.animals[i].photos.length > 0)
+    } else if (data.animals[i].photos.length > 0) 
       $('.showResults').append(
         `<div class="card border-dark mb-3" style="width: 25rem;">` 
         + `<img class="card-img-top"<img src="${data.animals[i].primary_photo_cropped.small}"></a>` 
@@ -41,12 +31,12 @@ function getElements(data) {
         + `<br>` 
         + `<b class=text-primary>Location</b>: ${data.animals[i].contact.address.city},${data.animals[i].contact.address.state}`
         + `<br>` 
-        + `<a href="${data.animals[i].url}" type="button" class="btn btn-info">Click for Info</a>`
+        + `<a href="${data.animals[i].url}" target="_blank" type="button" class="btn btn-info">Click for Info</a>`
         + `<br>` 
         + `</div>`
         + `</div>`
       );
-    // console.log("LOCATION = " + data.animals[i].contact.address.city + data.animals[i].contact.address.state);
+    
   }  
 }
 
@@ -57,21 +47,15 @@ $(document).ready(function() {
     const children = $('input:radio[name=children]:checked').val();
     const dogs = $('input:radio[name=dogs]:checked').val();
     const cats = $('input:radio[name=cats]:checked').val();
-    const special = $('input:radio[name=special]:checked').val();
-    // const city = $("#location").val().toLowerCase();
-    // const state = $("#state").val().toLowerCase();
-    // const stateInfo = document.getElementById("location");
-    // const state = stateInfo.options[stateInfo.selectedIndex].value;
+    const city = $("#city").val().toLowerCase();
+    const state = $("#state").val().toLowerCase();
     
-
-    // console.log("city ="  + city);
-    // console.log("state ="  + state);
     clearFields();
-    keyCall.getAccess(species, children, dogs, cats, special).then(function(data) {
-      getElements(data); 
+    keyCall.getAccess(species, children, dogs, cats, city, state).then(function(data) {
+      getElements(data);
+      console.log(data); 
     });
-    //    console.log(children);
-    //    $('.showResults').text(children);
+    
 
   });
 });
