@@ -41,6 +41,19 @@ h2 {
   color: #d41313;
 }
 
+.scroll {
+  margin: auto;
+  width:500px;
+  height:600px;
+  line-height:3em;
+  overflow:scroll;
+  padding:10px;
+  background-color:#000000;
+  color:#714D03;
+  border:4px double #DEBB07;
+  
+}
+
 .showResults {
   font-family: 'Eater', cursive;
 }
